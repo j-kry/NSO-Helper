@@ -7,6 +7,7 @@ import os
 
 from openpyxl import Workbook
 from openpyxl import load_workbook
+from regex import E
 
 class Person:
     def __init__(self, idNum, name, location, job, tech, device, sim, isSaved):
@@ -133,8 +134,10 @@ def SetupNextWindow():
     entLocation.grid(row=1, column=1, sticky="w")
     lblJob.grid(row=2, column=0, sticky="e")
     entJob.grid(row=2, column=1, sticky="w")
-    menuTechs.grid(row=3, column=1, sticky="ew")
-    menuDevices.grid(row=4, column=1, sticky="ew")
+    lblTechs.grid(row=3, column=0, sticky="e")
+    menuTechs.grid(row=3, column=1, sticky="w")
+    labelDevices.grid(row=4, column=0, sticky="e")
+    menuDevices.grid(row=4, column=1, sticky="w")
     lblSIM.grid(row=5, column=0, sticky="e")
     chkSIM.grid(row=5, column=1, sticky="w")
 
@@ -149,6 +152,7 @@ def PopulateUserInfo(e):
     if(menuSelectedUsers.get() == selectedUserInfo[index].getName()):
         entLocation.config(state=tk.NORMAL)
         entJob.config(state=tk.NORMAL)
+        entIdNum.config(state=tk.NORMAL)
         entIdNum.delete(0, tk.END)
         entIdNum.insert(0, selectedUserInfo[index].getIdNum())
         entJob.delete(0, tk.END)
@@ -236,6 +240,7 @@ deviceNames = ["Elitebook", "MSI", "Thinkbook", "Thinkpad", "X2"]
 window = tk.Tk()
 window.title("NSO Helper Outer")
 window.resizable(width=False, height=False)
+window.iconbitmap('mat.ico')
 # Present window to the front and keep it at the front
 window.attributes('-topmost', 1)
 window.eval('tk::PlaceWindow . center')
@@ -260,8 +265,10 @@ entLocation = tk.Entry(master=frmControls, width=35)
 lblJob = tk.Label(master=frmControls, text="Job Title:")
 entJob = tk.Entry(master=frmControls, width=35)
 
+lblTechs = tk.Label(master=frmControls, text="Tech:")
 menuTechs = ttk.Combobox(frmControls, value=techNames)
 
+labelDevices = tk.Label(master=frmControls, text="Device:")
 menuDevices = ttk.Combobox(frmControls, value=deviceNames)
 
 lblSIM = tk.Label(master=frmControls, text="SIM:")
