@@ -240,7 +240,6 @@ deviceNames = ["Elitebook", "MSI", "Thinkbook", "Thinkpad", "X2"]
 window = tk.Tk()
 window.title("NSO Helper Outer")
 window.resizable(width=False, height=False)
-window.iconbitmap('mat.ico')
 # Present window to the front and keep it at the front
 window.attributes('-topmost', 1)
 window.eval('tk::PlaceWindow . center')
