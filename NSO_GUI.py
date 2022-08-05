@@ -7,7 +7,6 @@ import os
 
 from openpyxl import Workbook
 from openpyxl import load_workbook
-from regex import E
 
 class Person:
     def __init__(self, idNum, name, location, job, tech, device, sim, isSaved):
@@ -233,8 +232,8 @@ numPeople = sheet.max_row
 # Declare list to hold People objects
 selectedUserInfo = []
 
-techNames = ["Antwon","Craig", "Eric", "Leonard", "Peter"]
-deviceNames = ["Elitebook", "MSI", "Thinkbook", "Thinkpad", "X2"]
+techNames = ["4101", "Antwon","Craig", "Eric", "Leonard", "Peter"]
+deviceNames = ["Chromebook", "Elitebook", "MSI", "Thinkbook", "Thinkpad", "X2"]
 
 # Create the window
 window = tk.Tk()
