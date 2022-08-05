@@ -1,6 +1,6 @@
 # NSO Helper
  
-Semi-automates weekly spreadsheet creation for my job
+Small python application for semi-automating the creation of a weekly spreadsheet
  
 Uses tkinter for GUI and openpyxl for Excel stuff
 
