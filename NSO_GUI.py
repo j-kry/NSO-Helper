@@ -179,10 +179,13 @@ def PrintUsers():
 def SaveSpreadsheet():
 
     unsavedUsers = False
+    unsavedUsersList = []
 
     for user in selectedUserInfo:
         if user.getIsSaved() == False:
             unsavedUsers = True
+            unsavedUsersList.append(user.getName())
+
     
     if(not unsavedUsers):
         # Create new workbook
@@ -214,7 +217,12 @@ def SaveSpreadsheet():
         createdWb.save(FileSave())
     
     else:
-        messagebox.showwarning("Warning", "You have unsaved users")
+
+        unsavedUsersString = ""
+
+        for user in unsavedUsersList:
+            unsavedUsersString += user + "\n"
+        messagebox.showwarning("Warning", "You have unsaved users:\n" + unsavedUsersString)
 
 
 
