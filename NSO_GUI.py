@@ -121,7 +121,7 @@ def SetupNextWindow():
     btnNext.destroy()
     btnSave.pack(side=tk.RIGHT, padx=10, ipadx=10)
     btnSaveUser.pack(side=tk.RIGHT, padx=10)
-    btnDebug.pack(side=tk.RIGHT, padx=10)
+    # btnDebug.pack(side=tk.RIGHT, padx=10)
 
     # Create global combo box so it can be accessed in the bind method
     # Select the first item and then run bind method manually to populate the fields
@@ -300,7 +300,7 @@ frmBtns = tk.Frame()
 btnNext = tk.Button(master=frmBtns,text="Next", command=MoveLists)
 btnSave = tk.Button(master=frmBtns,text="Save Sheet", command=SaveSpreadsheet)
 btnSaveUser = tk.Button(master=frmBtns, text="Save this user", command=SaveUser)
-btnDebug = tk.Button(master=frmBtns, text="Print Users", command=PrintUsers)
+# btnDebug = tk.Button(master=frmBtns, text="Print Users", command=PrintUsers)
 
 # Place initial widgets in window
 listAllUsers.grid(row=0, column=0, sticky="nsew")
