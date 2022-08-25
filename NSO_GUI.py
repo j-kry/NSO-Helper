@@ -31,6 +31,12 @@ class Person:
         return self.location
     def getJob(self):
         return self.job
+    def getTech(self):
+        return self.tech
+    def getDevice(self):
+        return self.device
+    def getSim(self):
+        return self.sim
     def getIsSaved(self):
         return self.isSaved
     def getAllInfo(self):
@@ -162,6 +168,11 @@ def PopulateUserInfo(e):
         entIdNum.config(state=tk.DISABLED)
         entLocation.config(state=tk.DISABLED)
         entJob.config(state=tk.DISABLED)
+
+        menuTechs.set(selectedUserInfo[index].getTech())
+        menuDevices.set(selectedUserInfo[index].getDevice())
+        checkValue.set(selectedUserInfo[index].getSim())
+        
     
 def SaveUser():
     index = menuSelectedUsers.current()
